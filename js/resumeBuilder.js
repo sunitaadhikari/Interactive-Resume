@@ -9,7 +9,7 @@ var bio = {
 		"location" : "Atlanta, GA"
 	},	
 	"pictureURL" : "images/sunita.jpg",
-	"welcomeMessage" : "Summary: Accomplished professional known for improving efficiency, translating vague requirements into concrete products, and producing high quality user friendly products.",
+	"welcomeMessage" : "Summary: Improve efficiency, translate vague requirements into concrete products, and produce high quality user friendly products.",
 	"skills" : ["User Interface Design", "Front-end Web Development","Responsive Design", "Twitter Bootstrap","HTML5","CSS3","JavaScript","JSON"],
 
 	display: function(){
@@ -154,15 +154,15 @@ var projects = {
 		"projects" : [
 			{
 				"title" : "HTML and CSS",
-				"dates" : "2014 - present",
-				"description" : "HTML and CSS Design and Development",
+				"dates" : "2014",
+				"description" : "Replicated a given design mockup using HTML and CSS.",
 				"images" : ["images/HTML_and_CSS.png"]
 			},
 			{
 				"title" : "Interactive Resume",
-				"dates" : "2014 - present",
-				"description" : "Create Interactive Resume",
-				"images" : []
+				"dates" : "2015",
+				"description" : "Created an interactive resume using JSON, JQUERY, and JavaScript.",
+				"images" : ["images/interactive_resume.png"]
 			}			
 		],
 		display: function(){
