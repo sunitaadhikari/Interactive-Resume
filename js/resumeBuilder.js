@@ -13,30 +13,46 @@ var bio = {
 	"skills" : ["User Interface Design", "Front-end Web Development","Responsive Design", "Twitter Bootstrap","HTML5","CSS3","JavaScript","JSON"],
 
 	display: function(){
-      var formattedName = HTMLheaderName.replace('%data%',bio.name);     
-      var formattedRole = HTMLheaderRole.replace('%data%',bio.role);
-	  var formattedMobile = HTMLmobile.replace('%data%',bio.contacts.mobile);
-      var formattedPic = HTMLbioPic.replace('%data%',bio.pictureURL);
-      $("#header").prepend(formattedPic);
-      $("#header").prepend(formattedRole);       
-      $("#header").prepend(formattedName);      
-      $("#topContacts").append(formattedMobile);
-      var formattedEmail = HTMLemail.replace('%data%',bio.contacts.email);
-      $("#topContacts").append(formattedEmail);
-      var formattedGithub = HTMLgithub.replace('%data%',bio.contacts.github);
-      $("#topContacts").append(formattedGithub);
-      var formattedTwitter = HTMLtwitter.replace('%data%',bio.contacts.twitter);
-      $("#topContacts").append(formattedTwitter);
-      var formattedLocation = HTMLlocation.replace('%data%',bio.contacts.location);
-      $("#topContacts").append(formattedLocation);
-      var formattedMessage = HTMLWelcomeMsg.replace('%data%',bio.welcomeMessage);
-      $("#header").append(formattedMessage);
+    	var formattedName = HTMLheaderName.replace('%data%',bio.name);     
+    	var formattedRole = HTMLheaderRole.replace('%data%',bio.role);
+		var formattedMobile = HTMLmobile.replace('%data%',bio.contacts.mobile);
+    	var formattedPic = HTMLbioPic.replace('%data%',bio.pictureURL);
+    	$("#header").prepend(formattedPic);
+    	$("#header").prepend(formattedRole);       
+    	$("#header").prepend(formattedName);      
+    	$("#topContacts").append(formattedMobile);
+    	var formattedEmail = HTMLemail.replace('%data%',bio.contacts.email);
+    	$("#topContacts").append(formattedEmail);
+    	var formattedGithub = HTMLgithub.replace('%data%',bio.contacts.github);
+    	$("#topContacts").append(formattedGithub);
+    	var formattedTwitter = HTMLtwitter.replace('%data%',bio.contacts.twitter);
+    	$("#topContacts").append(formattedTwitter);
+    	var formattedLocation = HTMLlocation.replace('%data%',bio.contacts.location);
+    	$("#topContacts").append(formattedLocation);
+    	var formattedMessage = HTMLWelcomeMsg.replace('%data%',bio.welcomeMessage);
+    	$("#header").append(formattedMessage);
 
+    	if (bio.skills.length > 0) {
+    		$("#header").append(HTMLskillsStart);
+    		var i = 0;
+    		for(i=0; i<bio.skills.length; i++){
+    			var formattedSkill = HTMLskills.replace('%data%',bio.skills[i]);
+    			$("#skills").append(formattedSkill);
+     		}
+		}
+		var formattedMobile = HTMLmobile.replace('%data%',bio.contacts.mobile);
+		$("#footerContacts").append(formattedMobile);
+		var formattedEmail = HTMLemail.replace('%data%',bio.contacts.email);
+		$("#footerContacts").append(formattedEmail);
+		var formattedGithub = HTMLgithub.replace('%data%',bio.contacts.github);
+		$("#footerContacts").append(formattedGithub);
+		var formattedTwitter = HTMLtwitter.replace('%data%',bio.contacts.twitter);
+		$("#footerContacts").append(formattedTwitter);
+		var formattedLocation = HTMLlocation.replace('%data%',bio.contacts.location);
+		$("#footerContacts").append(formattedLocation);
 	}
 }
-
 bio.display();
-
 
 var work = {
 	"jobs":[
@@ -44,39 +60,39 @@ var work = {
 			"employer" : "AT&T",
 			"title" : "Instructional Designer",
 			"location" : "Atlanta GA",
-			 "dates" : "2008 - present",
-			 "description" : "Design and develop Web-based courses for Digital Life Support and Monitoring using different authoring tools.Internal web-based tools to support training staff. Developed the training portal website for the Digital Life Central Operations to make Instructor Guides, Student Guides, and other related training materials available to vendors."
+			"dates" : "2008 - present",
+			"description" : "Design and develop Web-based courses for Digital Life Support and Monitoring using different authoring tools.Internal web-based tools to support training staff. Developed the training portal website for the Digital Life Central Operations to make Instructor Guides, Student Guides, and other related training materials available to vendors."
 		},
 		{
 			"employer" : "Aerotek",
 			"title" : "Instructional Designer",
 			"location" : "Atlanta, GA",
-			 "dates" : "12/2013 - 02/2014",
-			 "description" : "Redesigned and converted three courses from Articulate Storyline to Trivantis Lectora. Resolved access issue for audiences without Flash by creating a HTML version of the courses. Provided an outstanding learning experience by using variables to store and retrieve values, creating actions with conditions, customizing feedback boxes in question slides to match that of Articulate Storyline to reinforce knowledge, creating a lesson bookmark to allow the user to come back to the page where they left off, and creating menu options that is enabled to show the progress as learners complete certain section(s) in the course."
+			"dates" : "12/2013 - 02/2014",
+			"description" : "Redesigned and converted three courses from Articulate Storyline to Trivantis Lectora. Resolved access issue for audiences without Flash by creating a HTML version of the courses. Provided an outstanding learning experience by using variables to store and retrieve values, creating actions with conditions, customizing feedback boxes in question slides to match that of Articulate Storyline to reinforce knowledge, creating a lesson bookmark to allow the user to come back to the page where they left off, and creating menu options that is enabled to show the progress as learners complete certain section(s) in the course."
 		},
 		{
 			"employer" : "Institute of Interactive Technologies",
 			"title" : "Instructional Designer",
 			"location" : "Bloomsburg PA",
-			 "dates" : "2006 - 2007",
-			 "description" : "Designed and developed e-learning courses and user manuals for Kellogg’s Line 1 Packaging Machine Operators (PMO). Developed a CD based Soft Skills training program for Geisinger Medical Center."
+			"dates" : "2006 - 2007",
+			"description" : "Designed and developed e-learning courses and user manuals for Kellogg’s Line 1 Packaging Machine Operators (PMO). Developed a CD based Soft Skills training program for Geisinger Medical Center."
 
 		}
 	],
 	display: function(){
-	  for(job in work.jobs){
-      	$("#workExperience").append(HTMLworkStart);
-      	var formattedWorkEmployer = HTMLworkEmployer.replace('%data%',work.jobs[job].employer);
-      	var formattedWorkTitle = HTMLworkTitle.replace('%data%',work.jobs[job].title);
-      	var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
-      	$(".work-entry:last").append(formattedEmployerTitle);
-     	var formattedWorkLocation = HTMLworkLocation.replace('%data%',work.jobs[job].location);
-     	$(".work-entry:last").append(formattedWorkLocation);
-      	var formattedWorkDates = HTMLworkDates.replace('%data%',work.jobs[job].dates);
-      	$(".work-entry:last").append(formattedWorkDates);
-      	var formattedWorkDescription = HTMLworkDescription.replace('%data%',work.jobs[job].description);
-      	$(".work-entry:last").append(formattedWorkDescription);
-    }
+		for(job in work.jobs){
+      		$("#workExperience").append(HTMLworkStart);
+      		var formattedWorkEmployer = HTMLworkEmployer.replace('%data%',work.jobs[job].employer);
+      		var formattedWorkTitle = HTMLworkTitle.replace('%data%',work.jobs[job].title);
+      		var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
+      		$(".work-entry:last").append(formattedEmployerTitle);
+     		var formattedWorkLocation = HTMLworkLocation.replace('%data%',work.jobs[job].location);
+     		$(".work-entry:last").append(formattedWorkLocation);
+      		var formattedWorkDates = HTMLworkDates.replace('%data%',work.jobs[job].dates);
+      		$(".work-entry:last").append(formattedWorkDates);
+      		var formattedWorkDescription = HTMLworkDescription.replace('%data%',work.jobs[job].description);
+      		$(".work-entry:last").append(formattedWorkDescription);
+    	}
 	}
 }
 work.display();
@@ -110,41 +126,37 @@ var education = {
 		}
 	],
 	display: function(){
-      for(school in education.schools){
-      	$("#education").append(HTMLschoolStart);
-      	var formattedSchoolName = HTMLschoolName.replace('%data%', education.schools[school].name);
-      	var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', education.schools[school].degree);
-      	var formattedSchoolDates = HTMLschoolDates.replace('%data%', education.schools[school].dates);
-      	var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', education.schools[school].location);
+    	for(school in education.schools){
+      		$("#education").append(HTMLschoolStart);
+      		var formattedSchoolName = HTMLschoolName.replace('%data%', education.schools[school].name);
+      		var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', education.schools[school].degree);
+      		var formattedSchoolDates = HTMLschoolDates.replace('%data%', education.schools[school].dates);
+      		var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', education.schools[school].location);
+      		$(".education-entry:last").append(formattedSchoolName);
+      		$(".education-entry:last").append(formattedSchoolDegree);
+      		$(".education-entry:last").append(formattedSchoolDates);
+      		$(".education-entry:last").append(formattedSchoolLocation);
+      		for(major in education.schools[school].majors){
+      			var formattedSchoolMajor= HTMLschoolMajor.replace('%data%', education.schools[school].majors[major]);
+				$(".education-entry:last").append(formattedSchoolMajor);
+      		}
       	
-      	$(".education-entry:last").append(formattedSchoolName);
-      	$(".education-entry:last").append(formattedSchoolDegree);
-      	$(".education-entry:last").append(formattedSchoolDates);
-      	$(".education-entry:last").append(formattedSchoolLocation);
+    	}
 
-
-      	for(major in education.schools[school].majors){
-      		var formattedSchoolMajor= HTMLschoolMajor.replace('%data%', education.schools[school].majors[major]);
-			$(".education-entry:last").append(formattedSchoolMajor);
-      	}
-      	
-      }
-
-      if(education.onlineCourses.length > 0){
-      	$(".education-entry:last").append(HTMLonlineClasses);
-
-      	for(onlineCourse in education.onlineCourses){
-	      	var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[onlineCourse].title);
-	      	var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[onlineCourse].school);
-	      	var formattedOnlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[onlineCourse].dates);
-	      	var formattedURL = HTMLonlineURL.replace('%data%', education.onlineCourses[onlineCourse].url);
-	      	$(".education-entry:last").append(formattedOnlineTitle);
-	      	$(".education-entry:last").append(formattedOnlineSchool);
-	      	$(".education-entry:last").append(formattedOnlineDates);
-	      	$(".education-entry:last").append(formattedURL);
-      	}
+    	if(education.onlineCourses.length > 0){
+      		$(".education-entry:last").append(HTMLonlineClasses);
+      		for(onlineCourse in education.onlineCourses){
+	      		var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[onlineCourse].title);
+	      		var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[onlineCourse].school);
+	      		var formattedOnlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[onlineCourse].dates);
+	      		var formattedURL = HTMLonlineURL.replace('%data%', education.onlineCourses[onlineCourse].url);
+	      		$(".education-entry:last").append(formattedOnlineTitle);
+	      		$(".education-entry:last").append(formattedOnlineSchool);
+	      		$(".education-entry:last").append(formattedOnlineDates);
+	      		$(".education-entry:last").append(formattedURL);
+      		}
+  		}
   	}
-  }
 
 }
 
@@ -189,25 +201,12 @@ var projects = {
 
 projects.display();
 
-if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
-     var i = 0;
-     for(i=0; i<bio.skills.length; i++){
-       var formattedSkill = HTMLskills.replace('%data%',bio.skills[i]);
-       $("#skills").append(formattedSkill);
-     }
-      
-}
-
-
 function locationizer(work_obj){
-
 	var locationArray = [];
 	for(job in work_obj.jobs){
 		var location = work_obj.jobs[job].location;
 		locationArray.push(location);
 	}
-
 	return locationArray;
 }
 
@@ -222,22 +221,11 @@ function inName(name){
 	var firstLetterUC = firstNameLC.charAt(0).toUpperCase();
 	var finalFirstName = firstLetterUC + firstNameLC.slice(1, firstNameLC.length);
 	var finalName = finalFirstName + " " +splittedNameArray[1];
-
 	return finalName;
 }
-
 $("#mapDiv").append(googleMap);
 
-var formattedMobile = HTMLmobile.replace('%data%',bio.contacts.mobile);
-$("#footerContacts").append(formattedMobile);
-var formattedEmail = HTMLemail.replace('%data%',bio.contacts.email);
-$("#footerContacts").append(formattedEmail);
-var formattedGithub = HTMLgithub.replace('%data%',bio.contacts.github);
-$("#footerContacts").append(formattedGithub);
-var formattedTwitter = HTMLtwitter.replace('%data%',bio.contacts.twitter);
-$("#footerContacts").append(formattedTwitter);
-var formattedLocation = HTMLlocation.replace('%data%',bio.contacts.location);
-$("#footerContacts").append(formattedLocation);
+
 
 
 
